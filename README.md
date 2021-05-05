@@ -35,12 +35,16 @@ dx @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParam
 
 ### How to switch context to a process:   
 ```
-
 // <PID> should replace with the process PID
 0: kd> dx -s Debugger.Sessions[0].Processes[<PID>].SwitchTo()   
 
 // OR like that, but notice that it search for processes by name and there might be number with the same name. 
 0: kd> dx -s @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParameters->CommandLine->ToDisplayString().Contains("chrome"))[<PID>].SwitchTo()
 
+
+0: kd> !process 0 0 WindowsProject1.exe
+0: kd> .process /i 000000dd35f3e000d
+
+```
 
 
