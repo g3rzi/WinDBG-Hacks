@@ -27,3 +27,8 @@ Error: Cannot compare non-intrinsic values to each other.
 
 0: kd> .tlist
 ```
+
+### How to search for process by name
+```
+dx @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParameters->CommandLine->ToDisplayString().Contains("chrome"))
+```
