@@ -31,4 +31,16 @@ Error: Cannot compare non-intrinsic values to each other.
 ### How to search for process by name
 ```
 dx @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParameters->CommandLine->ToDisplayString().Contains("chrome"))
+```  
+
+### How to switch context to a process:   
 ```
+
+// <PID> should replace with the process PID
+0: kd> dx -s Debugger.Sessions[0].Processes[<PID>].SwitchTo()   
+
+// OR like that, but notice that it search for processes by name and there might be number with the same name. 
+0: kd> dx -s @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParameters->CommandLine->ToDisplayString().Contains("chrome"))[<PID>].SwitchTo()
+
+
+
