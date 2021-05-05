@@ -26,6 +26,8 @@ Error: Cannot compare non-intrinsic values to each other.
 
 
 0: kd> .tlist
+
+0: kd> !dml_proc 
 ```
 
 ### How to search for process by name
