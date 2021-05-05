@@ -43,7 +43,19 @@ dx @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParam
 
 
 0: kd> !process 0 0 WindowsProject1.exe
+// To his PEB ?
 0: kd> .process /i 000000dd35f3e000d
+
+
+0: kd> !process 0 0 WindowsProject1.exe
+PROCESS ffffcf07bad91080
+    SessionId: 1  Cid: 22c8    Peb: dd35f3e000  ParentCid: 1598
+    DirBase: 1b9b83000  ObjectTable: ffffe5829cb59b00  HandleCount: 145.
+    Image: WindowsProject1.exe  
+0: kd> .process ffffcf07bad91080
+Implicit process is now ffffcf07`bad91080
+WARNING: .cache forcedecodeuser is not enabled
+0: kd> bu /p ffffcf07bad91080 user32!SetWindowTextA 
 
 ```
 
