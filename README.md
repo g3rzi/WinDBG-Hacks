@@ -47,4 +47,7 @@ dx @$cursession.Processes.Where(p => p.Environment.EnvironmentBlock.ProcessParam
 
 ```
 
-
+### Find your current context:   
+```
+dx @$curprocess.Name
+```
