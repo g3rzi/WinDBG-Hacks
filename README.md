@@ -16,3 +16,14 @@ OR
 0: kd> .reload /f
 0: kd> ld xyz
 ```  
+
+
+## Processes
+### How to list processes  
+```
+0: kd> dx -r1 Debugger.Sessions[0].Processes.Contains("chrome.exe")
+Error: Cannot compare non-intrinsic values to each other.  
+
+
+0: kd> .tlist
+```
