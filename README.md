@@ -17,6 +17,8 @@ OR
 0: kd> ld xyz
 ```  
 
+The `.reload /f` is very heavy. You don't need it if you just need to load one or two libraries.  
+For example, how 
 
 ## Processes
 ### How to list processes  
