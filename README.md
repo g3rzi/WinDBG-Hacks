@@ -18,7 +18,10 @@ OR
 ```  
 
 The `.reload /f` is very heavy. You don't need it if you just need to load one or two libraries.  
-For example, how 
+For example:  
+```
+.reload user32.dll win32u.dll
+```
 
 ## Processes
 ### How to list processes  
